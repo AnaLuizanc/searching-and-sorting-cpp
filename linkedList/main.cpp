@@ -15,6 +15,12 @@ class StaticList{
         int qtdAcessos;
         int tamanho;
 
+        void armazenaValores(int n){
+            for(int i=0; i<n; i++)
+                cin >> vector[i];
+            tamanho+=n;
+        }
+
         
 
 };
@@ -23,7 +29,7 @@ int main(){
     StaticList list;
     int n;
     cin >> n;
-    
+    list.armazenaValores(n);
 
     return 0;  
 }
