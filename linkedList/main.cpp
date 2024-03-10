@@ -6,22 +6,24 @@ using namespace std;
 class StaticList{
     public:
         StaticList(){
-            qtdAccessos = 0;
+            qtdAcessos = 0;
             tamanho = 0;
         }
-        ~StaticList(){
-
-        }
-    private:
-        int qtdAccessos;
+        ~StaticList(){}
+        
+        int vector[N_MAX];
+        int qtdAcessos;
         int tamanho;
-        int lista[N_MAX];
+
+        
+
 };
 
 int main(){
-    StaticList* list;
+    StaticList list;
     int n;
     cin >> n;
+    
 
     return 0;  
 }
