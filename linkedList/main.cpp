@@ -3,7 +3,7 @@
 #define N_MAX 100
 using namespace std;
 
-class Vector{
+class StaticList{
     public:
         int lista[N_MAX];
         int tamanho;
@@ -14,7 +14,7 @@ class Vector{
 };
 
 int main(){
-    Vector list;
+    StaticList list;
     list.qtdAcessos=0;
     int n;
     cin >> n;
