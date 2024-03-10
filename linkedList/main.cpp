@@ -5,26 +5,23 @@ using namespace std;
 
 class StaticList{
     public:
-        int lista[N_MAX];
+        StaticList(){
+            qtdAccessos = 0;
+            tamanho = 0;
+        }
+        ~StaticList(){
+
+        }
+    private:
+        int qtdAccessos;
         int tamanho;
-        int qtdAcessos;
-        
-    void armazenaValores();
-    void geraListaAleatoria();
-    void inserePosicaoEspecifica();
-    void transposicao();
-    void buscaValor();
-    void buscaMenorValor();
-    void imprime();
-    void imprimeInverso();
-    
+        int lista[N_MAX];
 };
 
 int main(){
-    StaticList list;
+    StaticList* list;
     int n;
     cin >> n;
-    
-    
+
     return 0;  
 }
