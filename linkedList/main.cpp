@@ -9,15 +9,22 @@ class StaticList{
         int tamanho;
         int qtdAcessos;
         
-
+    void armazenaValores();
+    void geraListaAleatoria();
+    void inserePosicaoEspecifica();
+    void transposicao();
+    void buscaValor();
+    void buscaMenorValor();
+    void imprime();
+    void imprimeInverso();
     
 };
 
 int main(){
     StaticList list;
-    list.qtdAcessos=0;
     int n;
     cin >> n;
+    
     
     return 0;  
 }
