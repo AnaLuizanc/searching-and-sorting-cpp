@@ -21,7 +21,11 @@ class StaticList{
             tamanho+=n;
         }
 
-        
+        void imprime(){
+            for(int i=0; i<tamanho; i++)
+                cout << vector[i] << " ";
+            cout << endl;
+        }
 
 };
 
@@ -30,6 +34,7 @@ int main(){
     int n;
     cin >> n;
     list.armazenaValores(n);
+    list.imprime();
 
     return 0;  
 }
