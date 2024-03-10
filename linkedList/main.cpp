@@ -5,13 +5,19 @@ using namespace std;
 
 class Vector{
     public:
-        int valor;
-        int qtdAcessos;
         int lista[N_MAX];
+        int tamanho;
+        int qtdAcessos;
+        
+
+    
 };
 
 int main(){
     Vector list;
+    list.qtdAcessos=0;
+    int n;
+    cin >> n;
     
     return 0;  
 }
