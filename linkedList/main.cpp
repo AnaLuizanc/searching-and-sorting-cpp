@@ -2,6 +2,7 @@
 #include<string>
 #include <cstdlib>
 #include<time.h>
+#include<cstdio>
 #define N_MAX 100
 using namespace std;
 
@@ -21,11 +22,14 @@ class StaticList{
             for(int i=0; i<n; i++)
                 cin >> vector[i];
             tamanho+=n;
+            qtdAcessos+=n;
         }
 
         void imprime(){
-            for(int i=0; i<tamanho; i++)
+            for(int i=0; i<tamanho; i++){
                 cout << vector[i] << " ";
+                qtdAcessos++;
+            }
             cout << endl;
         }
 
@@ -46,11 +50,13 @@ class StaticList{
             if(posicao == tamanho){
                 insereFim(valor);
                 tamanho++;
+                qtdAcessos++;
             }
             else{
                 posicao = andaUm(posicao);
                 vector[posicao] = valor;
                 tamanho++;
+                qtdAcessos++;
             }
         }
 
@@ -59,6 +65,7 @@ class StaticList{
             auxiliar = vector[posicaoA];
             vector[posicaoA] = vector[posicaoB];
             vector[posicaoB] = auxiliar;
+            qtdAcessos++;
         }
 
         int menorValor(){
@@ -68,7 +75,9 @@ class StaticList{
                 if(menor > vector[i]){
                     menor = vector[i];
                     posicao = i;
-                }     
+                    qtdAcessos++;
+                }
+                qtdAcessos++;    
             }
             return posicao;
         }
@@ -84,8 +93,11 @@ class StaticList{
 
         int buscaValor(int valor){
             for(int i=0; i<tamanho; i++){
-                if(vector[i] == valor)
+                if(vector[i] == valor){
+                    qtdAcessos++;
                     return i;
+                }
+                qtdAcessos++;    
             }
             return -1;
         }
