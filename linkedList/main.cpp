@@ -101,7 +101,23 @@ class StaticList{
             }
             return -1;
         }
+};
 
+class No{
+    public:
+        No(){
+            prox = NULL;
+            antec = NULL;
+            qtdAcessos = 0;
+            tamanho = 0;
+        }
+        ~No(){}
+
+        int valor;
+        int qtdAcessos;
+        int tamanho;
+        No* prox;
+        No* antec;
 };
 
 int main(){
