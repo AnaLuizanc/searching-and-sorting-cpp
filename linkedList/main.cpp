@@ -52,6 +52,13 @@ class StaticList{
             }
         }
 
+        void transposicao(int posicaoA, int posicaoB){
+            int auxiliar;
+            auxiliar = vector[posicaoA];
+            vector[posicaoA] = vector[posicaoB];
+            vector[posicaoB] = auxiliar;
+        }
+
 };
 
 int main(){
@@ -67,6 +74,10 @@ int main(){
     list.inserePosicao(valor, posicao);
     cin >> valor >> posicao;
     list.inserePosicao(valor, posicao);
+    list.imprime();
+    int pA, pB;
+    cin >> pA >> pB;
+    list.transposicao(pA, pB);
     list.imprime();
 
     return 0;  
