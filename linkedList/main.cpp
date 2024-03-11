@@ -115,6 +115,21 @@ class SimpleNode{
         SimpleNode* prox;
 };
 
+class LinkedList{
+    public:        
+        LinkedList(){
+            qtdAcessos = 0;
+            tamanho = 0;
+            cabeca = NULL;
+        }
+        ~LinkedList(){}
+
+        int valor;
+        int qtdAcessos;
+        int tamanho;
+        SimpleNode* cabeca;
+};
+
 int main(){
     StaticList list;
     int n;
