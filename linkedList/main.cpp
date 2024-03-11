@@ -27,6 +27,31 @@ class StaticList{
             cout << endl;
         }
 
+        void insereFim(int valor){
+            vector[tamanho] = valor;
+        }
+        
+        int andaUm(int posicao){
+            int posicaoAux = tamanho;
+            while(posicaoAux != posicao){
+                vector[posicaoAux] = vector[posicaoAux-1];
+                posicaoAux--;
+            }
+            return posicao;
+        }
+
+        void inserePosicao(int valor, int posicao){
+            if(posicao == tamanho){
+                insereFim(valor);
+                tamanho++;
+            }
+            else{
+                posicao = andaUm(posicao);
+                vector[posicao] = valor;
+                tamanho++;
+            }
+        }
+
 };
 
 int main(){
@@ -34,6 +59,14 @@ int main(){
     int n;
     cin >> n;
     list.armazenaValores(n);
+    list.imprime();
+    int valor, posicao;
+    cin >> valor >> posicao;
+    list.inserePosicao(valor, posicao);
+    cin >> valor >> posicao;
+    list.inserePosicao(valor, posicao);
+    cin >> valor >> posicao;
+    list.inserePosicao(valor, posicao);
     list.imprime();
 
     return 0;  
