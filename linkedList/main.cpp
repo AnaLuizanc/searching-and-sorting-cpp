@@ -1,5 +1,7 @@
 #include<iostream>
 #include<string>
+#include <cstdlib>
+#include<time.h>
 #define N_MAX 100
 using namespace std;
 
@@ -71,6 +73,15 @@ class StaticList{
             return posicao;
         }
 
+        void geraListaAleatoria(int size, int inicio, int fim){
+            srand(time(0));
+            for(int i=0; i<size; i++)
+                vector[i] = rand() % (fim-inicio+1) + inicio;
+            for(int i=0; i<size; i++)
+                cout << vector[i] << " ";
+            cout << endl;
+        }
+
 };
 
 int main(){
@@ -102,6 +113,13 @@ int main(){
     int posicaoMenor = list.menorValor();
     cout << "Menor valor: " << list.vector[posicaoMenor] << endl;
     cout << "Posicao: " << posicaoMenor << endl;
+    //Operacao 2
+    int size, inicio, fim;
+    cout << "Tamanho: ";
+    cin >> size;
+    cout << "Intervalo(50 150): ";
+    cin >> inicio >> fim;
+    list.geraListaAleatoria(size, inicio, fim);
 
     return 0;  
 }
