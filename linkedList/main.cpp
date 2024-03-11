@@ -82,6 +82,14 @@ class StaticList{
             cout << endl;
         }
 
+        int buscaValor(int valor){
+            for(int i=0; i<tamanho; i++){
+                if(vector[i] == valor)
+                    return i;
+            }
+            return -1;
+        }
+
 };
 
 int main(){
@@ -100,6 +108,19 @@ int main(){
     cin >> valor >> posicao;
     list.inserePosicao(valor, posicao);
     list.imprime();
+    //Operacao 5
+    cout << "Valor a ser procurado: ";
+    cin >> valor;
+    posicao = list.buscaValor(valor);
+    cout << "Encontrou na posicao " << posicao << endl;
+    cout << "Valor a ser procurado: ";
+    cin >> valor;
+    posicao = list.buscaValor(valor);
+    cout << "Encontrou na posicao " << posicao << endl;
+    cout << "Valor a ser procurado: ";
+    cin >> valor;
+    posicao = list.buscaValor(valor);
+    cout << "Encontrou na posicao " << posicao << endl;
     //Operacao 4
     int pA, pB;
     cin >> pA >> pB;
