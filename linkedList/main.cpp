@@ -59,6 +59,19 @@ class StaticList{
             vector[posicaoB] = auxiliar;
         }
 
+        int menorValor(){
+            int menor = vector[0];
+            int posicao = 0;
+            for(int i=1; i<tamanho; i++){
+                if(menor > vector[i]){
+                    menor = vector[i];
+                    posicao = i;
+                }
+                    
+            }
+            return posicao;
+        }
+
 };
 
 int main(){
@@ -78,7 +91,14 @@ int main(){
     int pA, pB;
     cin >> pA >> pB;
     list.trocaPosicoes(pA, pB);
+    cin >> pA >> pB;
+    list.trocaPosicoes(pA, pB);
+    cin >> pA >> pB;
+    list.trocaPosicoes(pA, pB);
     list.imprime();
+    int posicaoMenor = list.menorValor();
+    cout << "Menor valor: " << list.vector[posicaoMenor] << endl;
+    cout << "Posicao: " << posicaoMenor << endl;
 
     return 0;  
 }
