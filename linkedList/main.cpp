@@ -17,12 +17,12 @@ typedef struct node_aux{
 typedef Node* List;
 
 void inicializaLista(List* apLista){
-    Node* cabeca = new Node;
-    cabeca = NULL;
-    *apLista = cabeca;
     (*apLista)->tamanho = 0;
     (*apLista)->qtdAcessos = 0;
+    *apLista = NULL;    
 }
+
+
 
 void imprime(List lista){
     List aux = lista->prox;
@@ -40,6 +40,7 @@ int main(){
     cin >> qtd;
     for(int i=0; i<qtd; i++){
         cin >> valor;
+        //armazenaValores(&lista, valor);
     }
     imprime(lista);
 
