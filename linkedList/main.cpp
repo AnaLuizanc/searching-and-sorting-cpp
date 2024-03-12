@@ -37,6 +37,15 @@ void armazenaValores(List* apLista, int valor){
     }
 }
 
+void imprime(List lista){
+    List aux = lista->prox;
+    while(aux != NULL){
+        cout << aux->valor << " ";
+        aux = aux->prox;
+    }
+    cout >> endl;
+}
+
 int main(){
     List lista;
     lista->tamanho = 0;
@@ -47,6 +56,7 @@ int main(){
         cin >> valor;
         armazenaValores(&lista, valor);
     }
+    imprime(lista);
 
     return 0;  
 }
