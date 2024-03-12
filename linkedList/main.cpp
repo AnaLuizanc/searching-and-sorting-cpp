@@ -17,26 +17,11 @@ typedef struct node_aux{
 typedef Node* List;
 
 void inicializaLista(List* apLista){
-    *apLista = NULL;
+    Node* cabeca = new Node;
+    cabeca = NULL;
+    *apLista = cabeca;
     (*apLista)->tamanho = 0;
     (*apLista)->qtdAcessos = 0;
-}
-
-void armazenaValores(List* apLista, int valor){
-    Node* cabeca = *apLista;
-    Node* novoNo = new Node;
-    novoNo->valor = valor;
-    if(cabeca == NULL){
-        cabeca->prox = novoNo;
-        cabeca->tamanho++;
-    }else{
-        novoNo->prox = NULL;
-        Node* apAtual = *apLista;
-        while(apAtual->prox != NULL)
-            apAtual = apAtual->prox;
-        apAtual->prox = novoNo;
-        cabeca->tamanho++;
-    }
 }
 
 void imprime(List lista){
@@ -55,7 +40,6 @@ int main(){
     cin >> qtd;
     for(int i=0; i<qtd; i++){
         cin >> valor;
-        armazenaValores(&lista, valor);
     }
     imprime(lista);
 
