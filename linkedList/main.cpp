@@ -18,6 +18,8 @@ typedef Node* List;
 
 void inicializaLista(List* apLista){
     *apLista = NULL;
+    (*apLista)->tamanho = 0;
+    (*apLista)->qtdAcessos = 0;
 }
 
 void armazenaValores(List* apLista, int valor){
@@ -43,12 +45,11 @@ void imprime(List lista){
         cout << aux->valor << " ";
         aux = aux->prox;
     }
-    cout >> endl;
+    cout << endl;
 }
 
 int main(){
     List lista;
-    lista->tamanho = 0;
     inicializaLista(&lista);
     int qtd, valor;
     cin >> qtd;
