@@ -16,9 +16,13 @@ typedef struct node_aux{
 
 typedef Node* List;
 
-
+void inicializaLista(List* ap_lista){
+    *ap_lista = NULL;
+}
 
 int main(){
+    List lista;
+    inicializaLista(&lista);
 
     return 0;  
 }
