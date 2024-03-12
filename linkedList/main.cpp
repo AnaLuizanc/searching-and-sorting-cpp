@@ -16,13 +16,37 @@ typedef struct node_aux{
 
 typedef Node* List;
 
-void inicializaLista(List* ap_lista){
-    *ap_lista = NULL;
+void inicializaLista(List* apLista){
+    *apLista = NULL;
+}
+
+void armazenaValores(List* apLista, int valor){
+    Node* cabeca = *apLista;
+    Node* novoNo = new Node;
+    novoNo->valor = valor;
+    if(cabeca == NULL){
+        cabeca->prox = novoNo;
+        cabeca->tamanho++;
+    }else{
+        novoNo->prox = NULL;
+        Node* apAtual = *apLista;
+        while(apAtual->prox != NULL)
+            apAtual = apAtual->prox;
+        apAtual->prox = novoNo;
+        cabeca->tamanho++;
+    }
 }
 
 int main(){
     List lista;
+    lista->tamanho = 0;
     inicializaLista(&lista);
+    int qtd, valor;
+    cin >> qtd;
+    for(int i=0; i<qtd; i++){
+        cin >> valor;
+        armazenaValores(&lista, valor);
+    }
 
     return 0;  
 }
