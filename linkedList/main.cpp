@@ -9,9 +9,9 @@ using namespace std;
 
 class SimpleNode{
     public:
-        SimpleNode(){
-            prox = NULL;
-            
+        SimpleNode(int valor){
+            this->valor = valor;
+            this->prox = NULL;
         }
         ~SimpleNode(){}
 
