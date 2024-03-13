@@ -220,7 +220,21 @@ class SimpleList{
             return -1;
         }
 
-        
+        SimpleNode* buscaMenor(){
+            SimpleNode* menor = cabeca->prox;
+            SimpleNode* atual = cabeca->prox;
+            qtdAcessos+=2;
+            while(atual != NULL){
+                if(atual->valor < menor->valor){
+                    menor = atual;
+                    atual = atual->prox;
+                    qtdAcessos+=2;
+                }
+                atual = atual->prox;
+                qtdAcessos++;
+            }
+            return menor;
+        }
 
         void imprime(){
             SimpleNode* atual = cabeca;
