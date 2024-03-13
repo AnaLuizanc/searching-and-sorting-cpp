@@ -107,9 +107,13 @@ void imprime(List lista){
     cout << endl;
 }
 
+void imprimeInverso(List lista){
+
+}
+
 int main(){
     List lista;
-    inicializaLista(&lista);
+    /*inicializaLista(&lista);
     int qtd, valor;
     //cin >> valor;
     armazenaValores(&lista, 56);
@@ -124,7 +128,11 @@ int main(){
     cout << "Posicao: " << buscaValor(lista, 11) << endl;
     List menor = buscaMenor(lista);
     cout << "Menor: " << menor->valor << endl;
+    imprimeInverso(lista);
     cout << lista->tamanho;
+*/
+    StaticList* l;
+    
 
     return 0;  
 }

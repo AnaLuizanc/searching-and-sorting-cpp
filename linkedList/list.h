@@ -28,6 +28,14 @@ class StaticList{
             cout << endl;
         }
 
+        void imprimeInverso(){
+            for(int i=tamanho-1; i>=0; i--){
+                cout << vector[i] << " ";
+                qtdAcessos++;
+            }
+            cout << endl;
+        }
+
         void insereFim(int valor){
             vector[tamanho] = valor;
         }
