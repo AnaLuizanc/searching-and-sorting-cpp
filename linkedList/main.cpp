@@ -37,6 +37,24 @@ void armazenaValores(List* apLista, int valor){
     (*apLista)->qtdAcessos++;
 }
 
+void inserePosicao(List* apLista, int valor, int posicao){
+    Node* seguinte = (*apLista);
+    Node* antec = (*apLista);
+    Node* novoNo = (Node*)malloc(sizeof(Node));
+    novoNo->valor = valor;
+    int contador = 0;
+    while(contador != posicao){
+        seguinte = seguinte->prox;
+        antec = antec->prox;
+        contador++;
+    }
+    seguinte = seguinte->prox;
+    antec->prox = novoNo;
+    novoNo->prox = seguinte;
+    (*apLista)->tamanho++;
+    (*apLista)->qtdAcessos++;
+}
+
 void imprime(List lista){
     List aux = lista->prox; 
     while(aux != NULL){
@@ -50,6 +68,16 @@ int main(){
     List lista;
     inicializaLista(&lista);
     int qtd, valor;
+    //cin >> valor;
+    armazenaValores(&lista, 56);
+    armazenaValores(&lista, 47);
+    armazenaValores(&lista, 77);
+    armazenaValores(&lista, 13);
+    armazenaValores(&lista, 54);
+    inserePosicao(&lista, 567, 3);
+
+    imprime(lista);
+    cout << lista->tamanho;
 
     return 0;  
 }
