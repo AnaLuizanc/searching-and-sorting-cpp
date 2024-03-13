@@ -7,48 +7,22 @@
 using namespace std;
 #include "list.h"
 
-typedef struct no_aux{
-    int valor;
-    int qtdAcessos; 
-    int tamanho;
-    struct no_aux* prox;
-    struct no_aux* antec;
-}DoubleNode;
-
-typedef DoubleNode* ListD;
-
-void inicializaLista(ListD* apLista){
-    DoubleNode* cabeca = (DoubleNode*)malloc(sizeof(DoubleNode));
-    cabeca->qtdAcessos = cabeca->tamanho = 0;
-    cabeca->valor = -1;
-    cabeca->prox = NULL;
-    cabeca->antec = (*apLista);
-    *apLista = cabeca;
-}
-
-void armazenaValores(ListD* apLista, int valor){
-    DoubleNode* penultimo = (*apLista);
-    while(penultimo->prox != NULL)
-        penultimo = penultimo->prox;
-    DoubleNode* novoNo = (DoubleNode*)malloc(sizeof(DoubleNode));
-    novoNo->valor = valor;
-    novoNo->prox = NULL;
-    novoNo->antec = penultimo;
-    penultimo->prox = novoNo;
-    (*apLista)->tamanho++;
-    (*apLista)->qtdAcessos++;
-}
-
-void imprime(ListD lista){
-    ListD atual = lista->prox;
-    while(atual != NULL){
-        cout << atual->valor << " ";
-        atual = atual->prox;
-    }
-    cout << endl;
-}
-
 int main(){
+    SimpleList l;
+    l.armazenaValores(7);
+    l.armazenaValores(65);
+    l.imprime();
+    l.inserePosicao(4, 100);
+    l.inserePosicao(0, 90);
+    l.imprime();
+    l.inserePosicao(3, 3);
+    //l.swap(1, 2);
+    l.imprime();
+
+    SimpleNode* menor = l.buscaMenor();
+    cout << "Menor: " << menor->valor << endl;
+
+    cout << l.buscaValor(65) << " " << l.buscaValor(2) << endl;
     
     return 0;  
 }
