@@ -74,13 +74,13 @@ void swap(List* apLista, int posicaoA, int posicaoB){
 }
 
 int buscaValor(List lista, int valor){
-    Node* atual = lista;
+    Node* atual = lista->prox;
     for(int i=0; i<lista->tamanho; i++){
         if(atual->valor == valor)
-            return --i;
+            return i;
         atual = atual->prox;
     }
-    (*apLista)->qtdAcessos++;
+    lista->qtdAcessos++;
     return -1;
 }
 
