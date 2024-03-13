@@ -207,6 +207,19 @@ class SimpleList{
             qtdAcessos+=3;
         }
 
+        int buscaValor(int valor){
+            SimpleNode* atual = cabeca;qtdAcessos++;
+            for(int i=0; i<tamanho; i++){
+                if(atual->valor == valor){
+                    qtdAcessos++;
+                    return i;
+                }
+                qtdAcessos++;
+                atual = atual->prox;
+            }
+            return -1;
+        }
+
         
 
         void imprime(){
