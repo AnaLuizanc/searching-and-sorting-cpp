@@ -111,12 +111,12 @@ typedef struct node_aux{
     int qtdAcessos;
     int tamanho;
     struct node_aux* prox;
-}Node;
+}SimpleNode;
 
-typedef Node* List;
+typedef SimpleNode* List;
 
 void inicializaLista(List* apLista){
-    Node* cabeca = (Node*)malloc(sizeof(Node));
+    SimpleNode* cabeca = (SimpleNode*)malloc(sizeof(SimpleNode));
     cabeca->qtdAcessos = 0;
     cabeca->tamanho = 0;
     cabeca->valor = -1;
@@ -125,10 +125,10 @@ void inicializaLista(List* apLista){
 }
 
 void armazenaValores(List* apLista, int valor){
-    Node* atual = (*apLista);
+    SimpleNode* atual = (*apLista);
     while(atual->prox != NULL)
         atual = atual->prox;
-    Node* novoNo = (Node*)malloc(sizeof(Node));
+    SimpleNode* novoNo = (SimpleNode*)malloc(sizeof(SimpleNode));
     novoNo->valor = valor;
     novoNo->prox = NULL;
     atual->prox = novoNo;
@@ -137,9 +137,9 @@ void armazenaValores(List* apLista, int valor){
 }
 
 void inserePosicao(List* apLista, int valor, int posicao){
-    Node* seguinte = (*apLista);
-    Node* antec = (*apLista);
-    Node* novoNo = (Node*)malloc(sizeof(Node));
+    SimpleNode* seguinte = (*apLista);
+    SimpleNode* antec = (*apLista);
+    SimpleNode* novoNo = (SimpleNode*)malloc(sizeof(SimpleNode));
     novoNo->valor = valor;
     int contador = 0;
     while(contador != posicao){
@@ -155,8 +155,8 @@ void inserePosicao(List* apLista, int valor, int posicao){
 }
 
 void swap(List* apLista, int posicaoA, int posicaoB){
-    Node* atualA = (*apLista)->prox;
-    Node* atualB = (*apLista)->prox;
+    SimpleNode* atualA = (*apLista)->prox;
+    SimpleNode* atualB = (*apLista)->prox;
     int contadorA = 0, contadorB = 0;
     while(contadorA != posicaoA){
         atualA = atualA->prox;
@@ -173,7 +173,7 @@ void swap(List* apLista, int posicaoA, int posicaoB){
 }
 
 int buscaValor(List lista, int valor){
-    Node* atual = lista->prox;
+    SimpleNode* atual = lista->prox;
     for(int i=0; i<lista->tamanho; i++){
         if(atual->valor == valor)
             return i;
@@ -183,9 +183,9 @@ int buscaValor(List lista, int valor){
     return -1;
 }
 
-Node* buscaMenor(List lista){
-    Node* menor = lista->prox;
-    Node* atual = menor->prox;
+SimpleNode* buscaMenor(List lista){
+    SimpleNode* menor = lista->prox;
+    SimpleNode* atual = menor->prox;
     while(atual != NULL){
         if(atual->valor < menor->valor){
             menor = &(*atual);
