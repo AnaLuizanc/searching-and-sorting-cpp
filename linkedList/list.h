@@ -131,7 +131,7 @@ void armazenaValores(List* apLista, int valor){
     SimpleNode* novoNo = (SimpleNode*)malloc(sizeof(SimpleNode));
     novoNo->valor = valor;
     novoNo->prox = NULL;
-    penultimo->prox = novoNo;
+    penultimo->prox = novoNo;   
     (*apLista)->tamanho++;
     (*apLista)->qtdAcessos++;
 }
