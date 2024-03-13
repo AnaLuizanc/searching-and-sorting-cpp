@@ -49,6 +49,16 @@ class DoubleList{
                 tamanho++;
             }
         }
+
+        void imprime(){
+            DoubleNode* atual = cabeca;
+            while(atual != cauda){
+                cout << atual->valor << " ";
+                atual = atual->prox;
+                qtdAcessos+=2;
+            }
+            cout << endl;
+        }
 };
 
 int main(){
