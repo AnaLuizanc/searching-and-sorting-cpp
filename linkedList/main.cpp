@@ -17,31 +17,23 @@ typedef struct node_aux{
 typedef Node* List;
 
 void inicializaLista(List* apLista){
-    (*apLista)->tamanho = 0;
-    (*apLista)->qtdAcessos = 0;
-    *apLista = NULL;    
+    Node* cabeca = new Node;
+    cabeca->qtdAcessos = cabeca->tamanho = 0;
+    cabeca->prox = NULL;
+    *apLista = cabeca;      
 }
 
 
-
-void imprime(List lista){
-    List aux = lista->prox;
-    while(aux != NULL){
-        cout << aux->valor << " ";
-        aux = aux->prox;
-    }
-    cout << endl;
-}
 
 int main(){
     List lista;
     inicializaLista(&lista);
     int qtd, valor;
     cin >> qtd;
-    for(int i=0; i<qtd; i++){
+   // for(int i=0; i<qtd; i++){
         cin >> valor;
-        //armazenaValores(&lista, valor);
-    }
+        armazenaValores(&lista, valor);
+    //}
     imprime(lista);
 
     return 0;  
