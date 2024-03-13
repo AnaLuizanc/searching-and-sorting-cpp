@@ -55,7 +55,7 @@ class StaticList{
             }
         }
 
-        void trocaPosicoes(int posicaoA, int posicaoB){
+        void swap(int posicaoA, int posicaoB){
             int auxiliar;
             auxiliar = vector[posicaoA];
             vector[posicaoA] = vector[posicaoB];
@@ -63,7 +63,7 @@ class StaticList{
             qtdAcessos++;
         }
 
-        int menorValor(){
+        int buscaMenor(){
             int menor = vector[0];
             int posicao = 0;
             for(int i=1; i<tamanho; i++){
