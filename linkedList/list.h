@@ -186,6 +186,27 @@ class SimpleList{
             }
         }
 
+        void swap(int posicaoA, int posicaoB){
+            SimpleNode* atualA = cabeca;qtdAcessos++;
+            SimpleNode* atualB = cabeca;qtdAcessos++;
+            int contador = 0;
+            while(contador != posicaoA){
+                atualA = atualA->prox;
+                contador++;
+                qtdAcessos++;
+            }
+            contador = 0;
+            while(contador != posicaoB){
+                atualB = atualB->prox;
+                contador++;
+                qtdAcessos++;
+            }
+            int aux = atualA->valor;
+            atualA->valor = atualB->valor;
+            atualB->valor = aux;
+            qtdAcessos+=3;
+        }
+
         
 
         void imprime(){
