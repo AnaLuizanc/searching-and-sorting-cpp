@@ -7,6 +7,13 @@
 using namespace std;
 #include "list.h"
 
+class DoubleNode{
+    public:
+        int valor;
+        DoubleNode* prox;
+        DoubleNode* antec;
+};
+
 int main(){
     
     
