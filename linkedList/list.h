@@ -241,6 +241,17 @@ class SimpleList{
             return menor;
         }
 
+        void imprimeInverso_(SimpleNode* atual){
+            if(atual == NULL)return;
+            imprimeInverso_(atual->prox);
+            cout << atual->valor << " ";
+        }
+
+        void imprimeInverso(){
+            imprimeInverso_(cabeca);
+            cout << endl;
+        }
+
         void imprime(){
             SimpleNode* atual = cabeca;
             qtdAcessos++;
