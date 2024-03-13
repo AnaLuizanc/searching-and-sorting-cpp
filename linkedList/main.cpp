@@ -55,6 +55,25 @@ void inserePosicao(List* apLista, int valor, int posicao){
     (*apLista)->qtdAcessos++;
 }
 
+void swap(List* apLista, int posicaoA, int posicaoB){
+    Node* atualA = (*apLista)->prox;
+    Node* atualB = (*apLista)->prox;
+    int contadorA = 0, contadorB = 0;
+    while(contadorA != posicaoA){
+        atualA = atualA->prox;
+        contadorA++;
+    }
+    while(contadorB != posicaoB){
+        atualB = atualB->prox;
+        contadorB++;
+    }
+    int auxiliar = atualA->valor;
+    atualA->valor = atualB->valor;
+    atualB->valor = auxiliar;
+    (*apLista)->tamanho++;
+    (*apLista)->qtdAcessos++;
+}
+
 void imprime(List lista){
     List aux = lista->prox; 
     while(aux != NULL){
@@ -75,7 +94,8 @@ int main(){
     armazenaValores(&lista, 13);
     armazenaValores(&lista, 54);
     inserePosicao(&lista, 567, 3);
-
+    imprime(lista);
+    swap(&lista, 1, 3);
     imprime(lista);
     cout << lista->tamanho;
 
