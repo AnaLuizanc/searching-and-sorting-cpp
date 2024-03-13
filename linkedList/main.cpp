@@ -17,7 +17,8 @@ class DoubleNode{
 class DoubleList{
     public:
         DoubleList(){
-            tamanho = qtdAcessos = 0;
+            tamanho = 0;
+            qtdAcessos = 0;
             cabeca = NULL;
             cauda = NULL;
         }
@@ -34,7 +35,7 @@ class DoubleList{
                 novo->prox = cauda;
                 novo->antec = cabeca;
                 cabeca = novo;
-                cauda->antec = novo;
+                cauda = novo;
                 qtdAcessos+=2;
                 tamanho++;
             }else{
@@ -62,7 +63,9 @@ class DoubleList{
 };
 
 int main(){
-    
+    DoubleList l;
+    l.armazenaValores(12);
+    l.imprime();
     
     return 0;  
 }
