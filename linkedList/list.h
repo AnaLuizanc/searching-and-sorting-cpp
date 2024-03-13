@@ -146,42 +146,47 @@ class SimpleList{
             }
         }
 
-        void inserePosicao(int posicao, int valor){
-            if(posicao == 0){
+        void inserePosicao(int valor, int posicao){
+            if(tamanho == 0){
+                SimpleNode* novo = new SimpleNode;
+                novo->valor = valor;
+                novo->prox = NULL;
+                cabeca = novo;
+                tamanho++;
+                qtdAcessos++;
+            }else if(posicao == 0){
                 SimpleNode* novo = new SimpleNode;
                 novo->valor = valor;
                 novo->prox = cabeca;
                 cabeca = novo;
                 qtdAcessos+=2;
                 tamanho++;
-
-            }else if(posicao > tamanho){
-                SimpleNode* novo = new SimpleNode;
-                novo->valor = valor;
-                SimpleNode* ultimo = cabeca;
-                qtdAcessos++;
+            }else if(posicao >= tamanho){
+                SimpleNode* ultimo = cabeca;qtdAcessos++;
                 while(ultimo->prox != NULL){
                     ultimo = ultimo->prox;
                     qtdAcessos++;
                 }
+                SimpleNode* novo = new SimpleNode;
+                novo->valor = valor;
                 novo->prox = NULL;
                 ultimo->prox = novo;
-                qtdAcessos++;
                 tamanho++;
+                qtdAcessos++;
             }else{
                 SimpleNode* anterior = cabeca;
-                SimpleNode* seguinte = cabeca;
-                for(int i=0; i<posicao; i++){
+                SimpleNode* seguinte = cabeca->prox;
+                qtdAcessos+=2;
+                for(int i=0; i<posicao-1; i++){
                     anterior = anterior->prox;
                     seguinte = seguinte->prox;
                     qtdAcessos+=2;
-                } 
-                seguinte = seguinte->prox;qtdAcessos++;
+                }
                 SimpleNode* novo = new SimpleNode;
                 novo->valor = valor;
                 novo->prox = seguinte;
                 anterior->prox = novo;
-                qtdAcessos++;
+                qtdAcessos+=2;
                 tamanho++;
             }
         }
