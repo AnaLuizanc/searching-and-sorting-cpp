@@ -125,13 +125,13 @@ void inicializaLista(List* apLista){
 }
 
 void armazenaValores(List* apLista, int valor){
-    SimpleNode* atual = (*apLista);
-    while(atual->prox != NULL)
-        atual = atual->prox;
+    SimpleNode* ultimo = (*apLista);
+    while(ultimo->prox != NULL)
+        ultimo = ultimo->prox;
     SimpleNode* novoNo = (SimpleNode*)malloc(sizeof(SimpleNode));
     novoNo->valor = valor;
     novoNo->prox = NULL;
-    atual->prox = novoNo;
+    ultimo->prox = novoNo;
     (*apLista)->tamanho++;
     (*apLista)->qtdAcessos++;
 }
