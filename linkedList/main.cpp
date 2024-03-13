@@ -14,6 +14,18 @@ class DoubleNode{
         DoubleNode* antec;
 };
 
+class DoubleList{
+    public:
+        DoubleList(){
+            tamanho = qtdAcessos = 0;
+            cabeca = NULL;
+        }
+
+        int tamanho;
+        int qtdAcessos;
+        DoubleNode* cabeca;
+};
+
 int main(){
     
     
