@@ -147,6 +147,17 @@ class SimpleList{
         }
 
         
+
+        void imprime(){
+            SimpleNode* atual = cabeca;
+            qtdAcessos++;
+            while(atual != NULL){
+                cout << atual->valor << " ";
+                atual = atual->prox;
+                qtdAcessos++;
+            }
+            cout << endl;
+        }
 };
 
 #endif
