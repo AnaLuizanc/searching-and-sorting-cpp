@@ -106,104 +106,24 @@ class StaticList{
         }
 };
 
-typedef struct node_aux{
-    int valor;
-    int qtdAcessos;
-    int tamanho;
-    struct node_aux* prox;
-}SimpleNode;
+class SimpleNode{
+    public:
+        int valor;
+        SimpleNode* prox;
+};
 
-typedef SimpleNode* List;
-
-void inicializaLista(List* apLista){
-    SimpleNode* cabeca = (SimpleNode*)malloc(sizeof(SimpleNode));
-    cabeca->qtdAcessos = 0;
-    cabeca->tamanho = 0;
-    cabeca->valor = -1;
-    cabeca->prox = NULL;
-    *apLista = cabeca;      
-}
-
-void armazenaValores(List* apLista, int valor){
-    SimpleNode* penultimo = (*apLista);
-    while(penultimo->prox != NULL)
-        penultimo = penultimo->prox;
-    SimpleNode* novoNo = (SimpleNode*)malloc(sizeof(SimpleNode));
-    novoNo->valor = valor;
-    novoNo->prox = NULL;
-    penultimo->prox = novoNo;   
-    (*apLista)->tamanho++;
-    (*apLista)->qtdAcessos++;
-}
-
-void inserePosicao(List* apLista, int valor, int posicao){
-    SimpleNode* seguinte = (*apLista);
-    SimpleNode* antec = (*apLista);
-    SimpleNode* novoNo = (SimpleNode*)malloc(sizeof(SimpleNode));
-    novoNo->valor = valor;
-    int contador = 0;
-    while(contador != posicao){
-        seguinte = seguinte->prox;
-        antec = antec->prox;
-        contador++;
-    }
-    seguinte = seguinte->prox;
-    antec->prox = novoNo;
-    novoNo->prox = seguinte;
-    (*apLista)->tamanho++;
-    (*apLista)->qtdAcessos++;
-}
-
-void swap(List* apLista, int posicaoA, int posicaoB){
-    SimpleNode* atualA = (*apLista)->prox;
-    SimpleNode* atualB = (*apLista)->prox;
-    int contadorA = 0, contadorB = 0;
-    while(contadorA != posicaoA){
-        atualA = atualA->prox;
-        contadorA++;
-    }
-    while(contadorB != posicaoB){
-        atualB = atualB->prox;
-        contadorB++;
-    }
-    int auxiliar = atualA->valor;
-    atualA->valor = atualB->valor;
-    atualB->valor = auxiliar;
-    (*apLista)->qtdAcessos++;
-}
-
-int buscaValor(List lista, int valor){
-    SimpleNode* atual = lista->prox;
-    for(int i=0; i<lista->tamanho; i++){
-        if(atual->valor == valor)
-            return i;
-        atual = atual->prox;
-    }
-    lista->qtdAcessos++;
-    return -1;
-}
-
-SimpleNode* buscaMenor(List lista){
-    SimpleNode* menor = lista->prox;
-    SimpleNode* atual = menor->prox;
-    while(atual != NULL){
-        if(atual->valor < menor->valor){
-            menor = &(*atual);
-            atual = atual->prox;
+class SimpleList{
+    public:
+        SimpleList(){
+            tamanho = 0;
+            qtdAcessos = 0;
+            cabeca = NULL;
         }
-        atual = atual->prox;
-    }
-    lista->qtdAcessos++;
-    return menor;
-}
+        int tamanho;
+        int qtdAcessos;
+        SimpleNode* cabeca;
 
-void imprime(List lista){
-    List aux = lista->prox; 
-    while(aux != NULL){
-        cout << aux->valor << " ";
-        aux = aux->prox;
-    }
-    cout << endl;
-}
+        
+};
 
 #endif
