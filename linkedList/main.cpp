@@ -74,6 +74,16 @@ void swap(List* apLista, int posicaoA, int posicaoB){
     (*apLista)->qtdAcessos++;
 }
 
+int buscaValor(List lista, int valor){
+    Node* atual = lista;
+    for(int i=0; i<lista->tamanho; i++){
+        if(atual->valor == valor)
+            return --i;
+        atual = atual->prox;
+    }
+    return -1;
+}
+
 void imprime(List lista){
     List aux = lista->prox; 
     while(aux != NULL){
@@ -97,6 +107,8 @@ int main(){
     imprime(lista);
     swap(&lista, 1, 3);
     imprime(lista);
+    cout << "Posicao: " << buscaValor(lista, 77) << endl;
+    cout << "Posicao: " << buscaValor(lista, 11) << endl;
     cout << lista->tamanho;
 
     return 0;  
