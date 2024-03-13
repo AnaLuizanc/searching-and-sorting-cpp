@@ -37,6 +37,14 @@ void armazenaValores(List* apLista, int valor){
     (*apLista)->qtdAcessos++;
 }
 
+void imprime(List lista){
+    List aux = lista->prox; 
+    while(aux != NULL){
+        cout << aux->valor << " ";
+        aux = aux->prox;
+    }
+    cout << endl;
+}
 
 int main(){
     List lista;
