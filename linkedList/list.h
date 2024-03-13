@@ -123,6 +123,29 @@ class SimpleList{
         int qtdAcessos;
         SimpleNode* cabeca;
 
+        void armazenaValores(int valor){
+            if(tamanho == 0){
+                SimpleNode* novo = new SimpleNode;
+                novo->valor = valor;
+                novo->prox = NULL;
+                cabeca = novo;
+                tamanho++;
+                qtdAcessos++;
+            }else{
+                SimpleNode* ultimo = cabeca;
+                while(ultimo->prox != NULL){
+                    ultimo = ultimo->prox;
+                    qtdAcessos++;
+                }
+                SimpleNode* novo = new SimpleNode;
+                novo->valor = valor;
+                novo->prox = NULL;
+                ultimo->prox = novo;
+                tamanho++;
+                qtdAcessos++;
+            }
+        }
+
         
 };
 
