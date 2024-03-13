@@ -146,6 +146,46 @@ class SimpleList{
             }
         }
 
+        void inserePosicao(int posicao, int valor){
+            if(posicao == 0){
+                SimpleNode* novo = new SimpleNode;
+                novo->valor = valor;
+                novo->prox = cabeca;
+                cabeca = novo;
+                qtdAcessos+=2;
+                tamanho++;
+
+            }else if(posicao > tamanho){
+                SimpleNode* novo = new SimpleNode;
+                novo->valor = valor;
+                SimpleNode* ultimo = cabeca;
+                qtdAcessos++;
+                while(ultimo->prox != NULL){
+                    ultimo = ultimo->prox;
+                    qtdAcessos++;
+                }
+                novo->prox = NULL;
+                ultimo->prox = novo;
+                qtdAcessos++;
+                tamanho++;
+            }else{
+                SimpleNode* anterior = cabeca;
+                SimpleNode* seguinte = cabeca;
+                for(int i=0; i<posicao; i++){
+                    anterior = anterior->prox;
+                    seguinte = seguinte->prox;
+                    qtdAcessos+=2;
+                } 
+                seguinte = seguinte->prox;qtdAcessos++;
+                SimpleNode* novo = new SimpleNode;
+                novo->valor = valor;
+                novo->prox = seguinte;
+                anterior->prox = novo;
+                qtdAcessos++;
+                tamanho++;
+            }
+        }
+
         
 
         void imprime(){
