@@ -32,8 +32,8 @@ class DoubleList{
             if(tamanho == 0){
                 DoubleNode* novo = new DoubleNode;
                 novo->valor = valor;
-                novo->prox = cauda;
-                novo->antec = cabeca;
+                novo->prox = NULL;
+                novo->antec = NULL;
                 cabeca = novo;
                 cauda = novo;
                 qtdAcessos+=2;
@@ -53,6 +53,7 @@ class DoubleList{
 
         void imprime(){
             DoubleNode* atual = cabeca;
+            qtdAcessos++;
             while(atual != cauda){
                 cout << atual->valor << " ";
                 atual = atual->prox;
