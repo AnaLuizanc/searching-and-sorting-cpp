@@ -19,11 +19,13 @@ class DoubleList{
         DoubleList(){
             tamanho = qtdAcessos = 0;
             cabeca = NULL;
+            cauda = NULL;
         }
 
         int tamanho;
         int qtdAcessos;
         DoubleNode* cabeca;
+        DoubleNode* cauda;
 };
 
 int main(){
