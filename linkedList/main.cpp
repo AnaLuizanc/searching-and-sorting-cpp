@@ -70,7 +70,6 @@ void swap(List* apLista, int posicaoA, int posicaoB){
     int auxiliar = atualA->valor;
     atualA->valor = atualB->valor;
     atualB->valor = auxiliar;
-    (*apLista)->tamanho++;
     (*apLista)->qtdAcessos++;
 }
 
@@ -81,8 +80,10 @@ int buscaValor(List lista, int valor){
             return --i;
         atual = atual->prox;
     }
+    (*apLista)->qtdAcessos++;
     return -1;
 }
+
 
 void imprime(List lista){
     List aux = lista->prox; 
