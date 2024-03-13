@@ -25,6 +25,17 @@ void inicializaLista(List* apLista){
     *apLista = cabeca;      
 }
 
+void armazenaValores(List* apLista, int valor){
+    Node* cabeca = (*apLista);
+    while(cabeca->prox != NULL)
+        cabeca = cabeca->prox;
+    Node* novoNo = (Node*)malloc(sizeof(Node));
+    novoNo->valor = valor;
+    novoNo->prox = NULL;
+    cabeca->prox = novoNo;
+    (*apLista)->tamanho++;
+    (*apLista)->qtdAcessos++;
+}
 
 
 int main(){
