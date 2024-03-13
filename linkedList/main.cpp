@@ -17,6 +17,15 @@ typedef struct no_aux{
 
 typedef DoubleNode* ListD;
 
+void inicializaLista(ListD* apLista){
+    DoubleNode* cabeca = (DoubleNode*)malloc(sizeof(DoubleNode));
+    cabeca->qtdAcessos = cabeca->tamanho = 0;
+    cabeca->valor = -1;
+    cabeca->prox = NULL;
+    cabeca->antec = (*apLista);
+    *apLista = cabeca;
+}
+
 int main(){
     
     return 0;  
