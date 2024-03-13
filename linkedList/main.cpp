@@ -84,6 +84,19 @@ int buscaValor(List lista, int valor){
     return -1;
 }
 
+Node* buscaMenor(List lista){
+    Node* menor = lista->prox;
+    Node* atual = menor->prox;
+    while(atual != NULL){
+        if(atual->valor < menor->valor){
+            menor = &(*atual);
+            atual = atual->prox;
+        }
+        atual = atual->prox;
+    }
+    lista->qtdAcessos++;
+    return menor;
+}
 
 void imprime(List lista){
     List aux = lista->prox; 
@@ -104,12 +117,13 @@ int main(){
     armazenaValores(&lista, 77);
     armazenaValores(&lista, 13);
     armazenaValores(&lista, 54);
-    inserePosicao(&lista, 567, 3);
     imprime(lista);
     swap(&lista, 1, 3);
     imprime(lista);
     cout << "Posicao: " << buscaValor(lista, 77) << endl;
     cout << "Posicao: " << buscaValor(lista, 11) << endl;
+    List menor = buscaMenor(lista);
+    cout << "Menor: " << menor->valor << endl;
     cout << lista->tamanho;
 
     return 0;  
