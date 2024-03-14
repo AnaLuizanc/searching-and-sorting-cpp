@@ -41,6 +41,7 @@ class StaticList{
             while(posicaoAux != posicao){
                 vector[posicaoAux] = vector[posicaoAux-1];
                 posicaoAux--;
+                qtdAcessos+=2;
             }
             return posicao;
         }
@@ -55,7 +56,7 @@ class StaticList{
                 posicao = andaUm(posicao);
                 vector[posicao] = valor;
                 tamanho++;
-                qtdAcessos++;
+                qtdAcessos+=2;
             }
         }
 
@@ -64,11 +65,11 @@ class StaticList{
             auxiliar = vector[posicaoA];
             vector[posicaoA] = vector[posicaoB];
             vector[posicaoB] = auxiliar;
-            qtdAcessos++;
+            qtdAcessos+=4;
         }
 
         int buscaMenor(){
-            int menor = vector[0];
+            int menor = vector[0];qtdAcessos++;
             int posicao = 0;
             for(int i=1; i<tamanho; i++){
                 if(menor > vector[i]){
@@ -88,6 +89,7 @@ class StaticList{
             for(int i=0; i<size; i++)
                 cout << vector[i] << " ";
             cout << endl;
+            qtdAcessos+=(2*size);
         }
 
         int buscaValor(int valor){
