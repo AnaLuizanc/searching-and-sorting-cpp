@@ -99,6 +99,28 @@ class DoubleList{
             }
         }
 
+        void swap(int posicaoA, int posicaoB){
+            DoubleNode* atualA = cabeca->prox;
+            DoubleNode* atualB = cabeca->prox;
+            qtdAcessos+=2;
+            int contador = 0;
+            while(contador != posicaoA){
+                atualA = atualA->prox;
+                qtdAcessos++;
+                contador++;
+            }
+            contador = 0;
+            while(contador != posicaoB){
+                atualB = atualB->prox;
+                qtdAcessos++;
+                contador++;
+            }
+            int aux = atualA->valor;
+            atualA->valor = atualB->valor;
+            atualB->valor = aux;
+            qtdAcessos+=4;
+        }
+
         void imprime(){
             DoubleNode* atual = cabeca->prox;
             qtdAcessos++;
@@ -118,6 +140,8 @@ int main(){
     l.armazenaValores(100);
     l.armazenaValores(147);
     l.inserePosicao(10,2);
+    l.imprime();
+    l.swap(0,4);
 
     cout << l.tamanho << endl;
     l.imprime();
