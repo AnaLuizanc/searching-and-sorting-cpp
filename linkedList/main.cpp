@@ -121,6 +121,20 @@ class DoubleList{
             qtdAcessos+=4;
         }
 
+        int buscaValor(int valor){
+            DoubleNode* atual = cabeca->prox;
+            qtdAcessos++;
+            for(int i=0; i<tamanho; i++){
+                if(atual->valor == valor){
+                    qtdAcessos++;
+                    return i;
+                }
+                qtdAcessos++;
+                atual = atual->prox;
+            }
+            return -1;
+        }
+
         void imprime(){
             DoubleNode* atual = cabeca->prox;
             qtdAcessos++;
@@ -145,6 +159,8 @@ int main(){
 
     cout << l.tamanho << endl;
     l.imprime();
+
+    cout << l.buscaValor(45) << l.buscaValor(24) << endl;
     
     return 0;  
 }
