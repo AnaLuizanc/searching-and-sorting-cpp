@@ -35,10 +35,6 @@ class StaticList{
             }
             cout << endl;
         }
-
-        void insereFim(int valor){
-            vector[tamanho] = valor;
-        }
         
         int andaUm(int posicao){
             int posicaoAux = tamanho;
@@ -51,7 +47,7 @@ class StaticList{
 
         void inserePosicao(int valor, int posicao){
             if(posicao == tamanho){
-                insereFim(valor);
+                vector[tamanho] = valor;
                 tamanho++;
                 qtdAcessos++;
             }
