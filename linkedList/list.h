@@ -259,6 +259,17 @@ class SimpleList{
             }
             cout << endl;
         }
+
+        void geraListaAleatoria(int size, int inicio, int fim){
+            delete(cabeca);
+            SimpleNode* cabeca = new SimpleNode;
+            srand(time(0));
+            int vetor[size];
+            for(int i=0; i<size; i++)
+                vetor[i] = rand() % (fim-inicio+1) + inicio;
+            for(int i=0; i<size; i++)
+                armazenaValores(vetor[i]);
+        }
 };
 
 class DoubleNode{
