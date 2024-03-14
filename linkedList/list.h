@@ -437,6 +437,17 @@ class DoubleList{
             }
             cout << endl;
         }
+        
+        void geraListaAleatoria(int size, int inicio, int fim){
+            delete(cabeca);
+            DoubleNode* cabeca = new DoubleNode;
+            srand(time(0));
+            int vetor[size];
+            for(int i=0; i<size; i++)
+                vetor[i] = rand() % (fim-inicio+1) + inicio;
+            for(int i=0; i<size; i++)
+                armazenaValores(vetor[i]);
+        }
 };
 
 #endif
