@@ -135,6 +135,22 @@ class DoubleList{
             return -1;
         }
 
+        DoubleNode* buscaMenor(){
+            DoubleNode* menor = cabeca->prox;
+            DoubleNode* atual = cabeca->prox;
+            qtdAcessos+=2;
+            while(atual != cauda){
+                if(atual->valor < menor->valor){
+                    menor = atual;
+                    atual = atual->prox;
+                    qtdAcessos+=2;
+                }
+                atual = atual->prox;
+                qtdAcessos++;
+            }
+            return menor;
+        }
+
         void imprime(){
             DoubleNode* atual = cabeca->prox;
             qtdAcessos++;
@@ -161,6 +177,9 @@ int main(){
     l.imprime();
 
     cout << l.buscaValor(45) << l.buscaValor(24) << endl;
+
+    DoubleNode* menor = l.buscaMenor();
+    cout << "Menor: " << menor->valor << endl;
     
     return 0;  
 }
