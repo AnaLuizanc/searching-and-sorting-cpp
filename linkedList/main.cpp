@@ -151,6 +151,17 @@ class DoubleList{
             return menor;
         }
 
+        void imprimeInverso(){
+            DoubleNode* atual = cauda->antec;
+            qtdAcessos++;
+            while(atual != cabeca){
+                cout << atual->valor << " ";
+                atual = atual->antec;
+                qtdAcessos+=2;
+            }
+            cout << endl;
+        }
+
         void imprime(){
             DoubleNode* atual = cabeca->prox;
             qtdAcessos++;
@@ -175,6 +186,7 @@ int main(){
 
     cout << l.tamanho << endl;
     l.imprime();
+    l.imprimeInverso();
 
     cout << l.buscaValor(45) << l.buscaValor(24) << endl;
 
