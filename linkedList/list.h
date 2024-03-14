@@ -13,11 +13,10 @@ class StaticList{
         int qtdAcessos;
         int tamanho;
 
-        void armazenaValores(int n){
-            for(int i=0; i<n; i++)
-                cin >> vector[i];
-            tamanho+=n;
-            qtdAcessos+=n;
+        void armazenaValores(int valor){
+            vector[tamanho] = valor;
+            tamanho++;
+            qtdAcessos++;
         }
 
         void imprime(){
