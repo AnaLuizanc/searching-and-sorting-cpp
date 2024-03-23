@@ -12,14 +12,18 @@ class InsertionSort{
         unsigned qtdAcessos;
 
         void ordena(){
+            imprime();
             for(int i=1; i<N_MAX-1; i++){
                 int j = i-1;
                 int aux = vetor[i];
+                qtdAcessos++;
                 while(j >= 0 && aux < vetor[j]){
                     vetor[j+1] = vetor[j];
                     j--;
+                    imprime();
                 }
                 vetor[j+1] = aux;
+                imprime();
             }
         }
 
