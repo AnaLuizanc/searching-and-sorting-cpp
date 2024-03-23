@@ -24,8 +24,11 @@ class InsertionSort{
         }
 
         void imprime(){
-            for(int i=0; i<N_MAX; i++)
+            for(int i=0; i<N_MAX; i++){
                 cout << vetor[i] << " ";
+                qtdAcessos++;
+            }
+                
             cout << endl;
         }
 };
