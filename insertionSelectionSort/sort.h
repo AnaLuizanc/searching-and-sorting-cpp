@@ -11,7 +11,7 @@ class InsertionSort{
         int vetor[N_MAX];
         unsigned qtdAcessos;
 
-        void ordena(int vetor[N_MAX]){
+        void ordena(){
             for(int i=1; i<N_MAX-1; i++){
                 int j = i-1;
                 int aux = vetor[i];
@@ -21,6 +21,12 @@ class InsertionSort{
                 }
                 vetor[j+1] = aux;
             }
+        }
+
+        void imprime(){
+            for(int i=0; i<N_MAX; i++)
+                cout << vetor[i] << " ";
+            cout << endl;
         }
 };
 
