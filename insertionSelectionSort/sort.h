@@ -5,22 +5,25 @@ class InsertionSort{
     public:
         InsertionSort(){
             qtdAcessos = 0;
+            tamanho = 0;
         }
         ~InsertionSort(){}
 
         int vetor[N_MAX];
         unsigned qtdAcessos;
+        unsigned tamanho;
 
-        void armazenaValores(int v[N_MAX]){
+        void armazenaValores(int v[]){
             for(int i=0; i<N_MAX; i++){
                 vetor[i] = v[i];
                 qtdAcessos++;
+                tamanho++;
             }
         }
 
         void ordena(){
             imprime();
-            for(int i=1; i<N_MAX; i++){
+            for(int i=1; i<tamanho; i++){
                 int j = i-1;
                 int aux = vetor[i];
                 qtdAcessos++;
@@ -36,7 +39,7 @@ class InsertionSort{
         }
 
         void imprime(){
-            for(int i=0; i<N_MAX; i++){
+            for(int i=0; i<tamanho; i++){
                 cout << vetor[i] << " ";
                 qtdAcessos++;
             }   
