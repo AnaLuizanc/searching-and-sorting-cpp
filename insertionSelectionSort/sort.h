@@ -47,4 +47,17 @@ class InsertionSort{
         }
 };
 
+class SelectionSort{
+    public:
+        SelectionSort(){
+            qtdAcessos = 0;
+            tamanho = 0;   
+        }
+        ~SelectionSort(){}
+
+        int vetor[N_MAX];
+            unsigned qtdAcessos;
+            unsigned tamanho;
+};
+
 #endif
