@@ -9,12 +9,12 @@ class InsertionSort{
         }
         ~InsertionSort(){}
 
-        int vetor[N_MAX];
+        int vetor[N];
         unsigned qtdAcessos;
         unsigned tamanho;
 
         void armazenaValores(int v[]){
-            for(int i=0; i<N_MAX; i++){
+            for(int i=0; i<N; i++){
                 vetor[i] = v[i];
                 qtdAcessos++;
                 tamanho++;
@@ -55,12 +55,12 @@ class SelectionSort{
         }
         ~SelectionSort(){}
 
-        int vetor[N_MAX];
+        int vetor[N];
         unsigned qtdAcessos;
         unsigned tamanho;
 
         void armazenaValores(int v[]){
-            for(int i=0; i<N_MAX; i++){
+            for(int i=0; i<N; i++){
                 vetor[i] = v[i];
                 qtdAcessos++;
                 tamanho++;
