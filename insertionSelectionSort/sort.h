@@ -56,8 +56,16 @@ class SelectionSort{
         ~SelectionSort(){}
 
         int vetor[N_MAX];
-            unsigned qtdAcessos;
-            unsigned tamanho;
+        unsigned qtdAcessos;
+        unsigned tamanho;
+
+        void armazenaValores(int v[]){
+            for(int i=0; i<N_MAX; i++){
+                vetor[i] = v[i];
+                qtdAcessos++;
+                tamanho++;
+            }
+        }
 };
 
 #endif
