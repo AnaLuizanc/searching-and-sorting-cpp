@@ -71,6 +71,7 @@ class SelectionSort{
             int aux = b;
             b = a;
             a = aux;
+            qtdAcessos+=3;
         }
 
         
