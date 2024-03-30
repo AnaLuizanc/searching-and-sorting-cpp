@@ -75,6 +75,7 @@ class SelectionSort{
         }
 
         void ordena(){
+            imprime();
             for(int i=0; i<tamanho; i++){
                 int menor = i;
                 for(int j=i+1; j<tamanho; j++){
@@ -82,6 +83,8 @@ class SelectionSort{
                         menor = j;
                     qtdAcessos+=2;
                 }
+                swap(i,menor);
+                imprime();
             }   
         }
 
