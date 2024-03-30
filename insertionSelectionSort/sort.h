@@ -66,6 +66,14 @@ class SelectionSort{
                 tamanho++;
             }
         }
+
+        void imprime(){
+            for(int i=0; i<tamanho; i++){
+                cout << vetor[i] << " ";
+                qtdAcessos++;
+            }   
+            cout << endl;
+        }
 };
 
 #endif
