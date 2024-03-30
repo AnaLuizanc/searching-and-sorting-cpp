@@ -67,6 +67,14 @@ class SelectionSort{
             }
         }
 
+        void swap(int a, int b){
+            int aux = b;
+            b = a;
+            a = aux;
+        }
+
+        
+
         void imprime(){
             for(int i=0; i<tamanho; i++){
                 cout << vetor[i] << " ";
