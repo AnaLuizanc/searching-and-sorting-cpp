@@ -74,7 +74,16 @@ class SelectionSort{
             qtdAcessos+=3;
         }
 
-        
+        void ordena(){
+            for(int i=0; i<tamanho; i++){
+                int menor = i;
+                for(int j=i+1; j<tamanho; j++){
+                    if(vetor[j] < vetor[menor])
+                        menor = j;
+                }
+                swap(vetor[i],vetor[menor]);
+            }   
+        }
 
         void imprime(){
             for(int i=0; i<tamanho; i++){
