@@ -80,6 +80,7 @@ class SelectionSort{
                 for(int j=i+1; j<tamanho; j++){
                     if(vetor[j] < vetor[menor])
                         menor = j;
+                    qtdAcessos+=2;
                 }
                 swap(vetor[i],vetor[menor]);
             }   
