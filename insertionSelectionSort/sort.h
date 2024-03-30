@@ -68,10 +68,10 @@ class SelectionSort{
         }
 
         void swap(int a, int b){
-            int aux = b;
-            b = a;
-            a = aux;
-            qtdAcessos+=3;
+            int aux = vetor[a];
+            vetor[a] = vetor[b];
+            vetor[b] = aux;
+            qtdAcessos+=4;
         }
 
         void ordena(){
@@ -82,7 +82,6 @@ class SelectionSort{
                         menor = j;
                     qtdAcessos+=2;
                 }
-                swap(vetor[i],vetor[menor]);
             }   
         }
 
