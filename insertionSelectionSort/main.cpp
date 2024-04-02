@@ -13,13 +13,12 @@ int main(){
     int lista[N] = {70,1,12,8,99,72,5,15,20,91,14,61,66,41,81,88,16,21,34,90};
 
     cout << "\t\tINSERTION SORT" << endl;
-    insert.ordena(lista);
+    insert.ordena(lista, 20);
     cout << "Numero de acessos: " << insert.qtdAcessos << endl;
     
     cout << "\t\tSELECTION SORT" << endl;
-    select.ordena(lista);
+    select.ordena(lista, 20);
     cout << "Numero de acessos: " << select.qtdAcessos << endl;
-
 
 
     return 0;
