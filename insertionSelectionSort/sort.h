@@ -76,7 +76,8 @@ class SelectionSort{
             qtdAcessos+=4;
         }
 
-        void ordena(){
+        void ordena(int v[]){
+            armazenaValores(v);
             imprime();
             for(int i=0; i<tamanho; i++){
                 int menor = i;
