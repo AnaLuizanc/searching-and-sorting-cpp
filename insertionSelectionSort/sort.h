@@ -13,16 +13,16 @@ class InsertionSort{
         unsigned qtdAcessos;
         unsigned tamanho;
 
-        void armazenaValores(int v[]){
-            for(int i=0; i<N; i++){
+        void armazenaValores(int v[], int n){
+            for(int i=0; i<n; i++){
                 vetor[i] = v[i];
                 qtdAcessos++;
                 tamanho++;
             }
         }
 
-        void ordena(int v[]){
-            armazenaValores(v);
+        void ordena(int v[], int n){
+            armazenaValores(v,n);
             imprime();
             for(int i=1; i<tamanho; i++){
                 int j = i-1;
@@ -61,8 +61,8 @@ class SelectionSort{
         unsigned qtdAcessos;
         unsigned tamanho;
 
-        void armazenaValores(int v[]){
-            for(int i=0; i<N; i++){
+        void armazenaValores(int v[], int n){
+            for(int i=0; i<n; i++){
                 vetor[i] = v[i];
                 qtdAcessos++;
                 tamanho++;
@@ -76,8 +76,8 @@ class SelectionSort{
             qtdAcessos+=4;
         }
 
-        void ordena(int v[]){
-            armazenaValores(v);
+        void ordena(int v[], int n){
+            armazenaValores(v,n);
             imprime();
             for(int i=0; i<tamanho; i++){
                 int menor = i;
