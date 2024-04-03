@@ -13,10 +13,10 @@ int main(){
     SelectionSort select;
     int lista[N] = {70,1,12,8,99,72,5,15,20,91,14,61,66,41,81,88,16,21,34,90};
 
-    cout << "\t\t\tINSERTION SORT" << endl;
+    cout << "\t\t INSERTION SORT" << endl;
     insert.ordena(lista, N);
     
-    cout << "\t\t\tSELECTION SORT" << endl;
+    cout << "\t\t SELECTION SORT" << endl;
     select.ordena(lista, N);
 
     ofstream arq;
@@ -24,12 +24,15 @@ int main(){
     int listaAleatoria[N_MAX];
     unsigned tamanho;
     srand(time(0));
+    cout << endl;
+    
     // EXECUTA 100 VEZES
     for(int i = 0; i<N_MAX; i++){
         insert.tamanho = 0;
         insert.qtdAcessos = 0;
         select.tamanho = 0;
         select.qtdAcessos = 0;
+
         tamanho = rand() % 100 + 1;
         
         for(int j=0; j<tamanho; j++)
