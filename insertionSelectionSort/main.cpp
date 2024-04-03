@@ -15,12 +15,14 @@ int main(){
 
     cout << "\t\t INSERTION SORT" << endl;
     insert.ordena(lista, N);
+    cout << "Quantidade de acessos: " << insert.qtdAcessos << endl;
     
     cout << "\t\t SELECTION SORT" << endl;
     select.ordena(lista, N);
+    cout << "Quantidade de acessos: " << select.qtdAcessos << endl;
 
-    ofstream arq;
-    arq.open("geraGrafico.txt", ios::app);
+    fstream arq;
+    arq.open("geraGrafico.txt", fstream::out | fstream::trunc);
     int listaAleatoria[N_MAX];
     unsigned tamanho;
     srand(time(0));
