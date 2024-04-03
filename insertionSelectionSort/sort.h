@@ -105,6 +105,19 @@ class SelectionSort{
             }   
         }
 
+        void ordenaListaAleatoria(int v[], int n){
+            armazenaValores(v,n);
+            for(int i=0; i<tamanho; i++){
+                int menor = i;
+                for(int j=i+1; j<tamanho; j++){
+                    if(vetor[j] < vetor[menor])
+                        menor = j;
+                    qtdAcessos+=2;
+                }
+                swap(i,menor);
+            }   
+        }
+
         void imprime(){
             for(int i=0; i<tamanho; i++){
                 cout << vetor[i] << " ";
