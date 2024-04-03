@@ -71,7 +71,7 @@ class SelectionSort{
         }
         ~SelectionSort(){}
 
-        int vetor[N];
+        int vetor[N_MAX];
         unsigned qtdAcessos;
         unsigned tamanho;
 
