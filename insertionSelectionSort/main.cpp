@@ -13,15 +13,11 @@ int main(){
     SelectionSort select;
     int lista[N] = {70,1,12,8,99,72,5,15,20,91,14,61,66,41,81,88,16,21,34,90};
 
-    cout << "\t\tINSERTION SORT" << endl;
+    cout << "\t\t\tINSERTION SORT" << endl;
     insert.ordena(lista, N);
-    cout << "Numero de acessos: " << insert.qtdAcessos << endl;
     
-    cout << "\t\tSELECTION SORT" << endl;
+    cout << "\t\t\tSELECTION SORT" << endl;
     select.ordena(lista, N);
-    cout << "Numero de acessos: " << select.qtdAcessos << endl;
-
-    system("clear");
 
     ofstream arq;
     arq.open("geraGrafico.txt", ios::app);
@@ -42,7 +38,6 @@ int main(){
         select.ordenaListaAleatoria(listaAleatoria,tamanho);
         cout << i+1 << "\t" << insert.tamanho << "\t" << insert.qtdAcessos << "\t" << select.qtdAcessos << endl;
         arq << i+1 << "\t" << insert.tamanho << "\t" << insert.qtdAcessos << "\t" << select.qtdAcessos << endl;
-        //insert.imprime();
     }
     arq.close();
 
