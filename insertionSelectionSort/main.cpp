@@ -1,5 +1,6 @@
 #include<iostream>
 #include<fstream>
+#include<cstdio>
 #include<cstdlib>
 #include<ctime>
 using namespace std;
@@ -22,8 +23,8 @@ int main(){
 
     system("clear");
 
-    FILE* arq;
-    arq = fopen("geraGrafico.txt", "w");
+    ofstream arq;
+    arq.open("geraGrafico.txt", ios::app);
     int listaAleatoria[N_MAX];
     unsigned tamanho;
     srand(time(0));
@@ -40,8 +41,10 @@ int main(){
         insert.ordenaListaAleatoria(listaAleatoria,tamanho);
         select.ordenaListaAleatoria(listaAleatoria,tamanho);
         cout << i+1 << "\t" << insert.tamanho << "\t" << insert.qtdAcessos << "\t" << select.qtdAcessos << endl;
+        arq << i+1 << "\t" << insert.tamanho << "\t" << insert.qtdAcessos << "\t" << select.qtdAcessos << endl;
         //insert.imprime();
     }
+    arq.close();
 
     return 0;
 }
