@@ -9,7 +9,7 @@ class InsertionSort{
         }
         ~InsertionSort(){}
 
-        int vetor[N];
+        int vetor[N_MAX];
         unsigned qtdAcessos;
         unsigned tamanho;
 
@@ -39,6 +39,20 @@ class InsertionSort{
             }
         }
 
+        void ordenaListaAleatoria(int v[], int n){
+            armazenaValores(v,n);
+            for(int i=1; i<n; i++){
+                int j = i-1;
+                int aux = vetor[i];
+                qtdAcessos++;
+                while(j >= 0 && aux < vetor[j]){
+                    vetor[j+1] = vetor[j];
+                    j--;
+                    qtdAcessos+=2;
+                }
+                vetor[j+1] = aux;
+            }
+        }
 
         void imprime(){
             for(int i=0; i<tamanho; i++){
