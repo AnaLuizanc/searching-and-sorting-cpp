@@ -1,13 +1,13 @@
 #ifndef SORT_H_INCLUDED
 #define SORT_H_INCLUDED
 
-class InsertionSort{
+class List{
     public:
-        InsertionSort(){
+        List(){
             qtdAcessos = 0;
             tamanho = 0;
         }
-        ~InsertionSort(){}
+        ~List(){}
 
         int vetor[N_MAX];
         unsigned qtdAcessos;
@@ -21,7 +21,7 @@ class InsertionSort{
             }
         }
 
-        void ordena(int v[], int n){
+        void ordenaInsertion(int v[], int n){
             armazenaValores(v,n);
             imprime();
             for(int i=1; i<tamanho; i++){
@@ -39,7 +39,7 @@ class InsertionSort{
             }
         }
 
-        void ordenaListaAleatoria(int v[], int n){
+        void ordenaInsertionListaAleatoria(int v[], int n){
             armazenaValores(v,n);
             for(int i=1; i<n; i++){
                 int j = i-1;
@@ -54,35 +54,6 @@ class InsertionSort{
             }
         }
 
-        void imprime(){
-            for(int i=0; i<tamanho; i++){
-                cout << vetor[i] << " ";
-                qtdAcessos++;
-            }   
-            cout << endl;
-        }
-};
-
-class SelectionSort{
-    public:
-        SelectionSort(){
-            qtdAcessos = 0;
-            tamanho = 0;   
-        }
-        ~SelectionSort(){}
-
-        int vetor[N_MAX];
-        unsigned qtdAcessos;
-        unsigned tamanho;
-
-        void armazenaValores(int v[], int n){
-            for(int i=0; i<n; i++){
-                vetor[i] = v[i];
-                qtdAcessos++;
-                tamanho++;
-            }
-        }
-
         void swap(int a, int b){
             int aux = vetor[a];
             vetor[a] = vetor[b];
@@ -90,7 +61,7 @@ class SelectionSort{
             qtdAcessos+=4;
         }
 
-        void ordena(int v[], int n){
+        void ordenaSelection(int v[], int n){
             armazenaValores(v,n);
             imprime();
             for(int i=0; i<tamanho; i++){
@@ -105,7 +76,7 @@ class SelectionSort{
             }   
         }
 
-        void ordenaListaAleatoria(int v[], int n){
+        void ordenaSelectionListaAleatoria(int v[], int n){
             armazenaValores(v,n);
             for(int i=0; i<tamanho; i++){
                 int menor = i;

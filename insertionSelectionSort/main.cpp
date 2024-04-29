@@ -9,16 +9,16 @@ using namespace std;
 #include"sort.h"
 
 int main(){
-    InsertionSort insert;
-    SelectionSort select;
+    List insert;
+    List select;
     int lista[N] = {70,1,12,8,99,72,5,15,20,91,14,61,66,41,81,88,16,21,34,90};
 
     cout << "\t\t INSERTION SORT" << endl;
-    insert.ordena(lista, N);
+    insert.ordenaInsertion(lista, N);
     cout << "Quantidade de acessos: " << insert.qtdAcessos << endl;
     
     cout << "\t\t SELECTION SORT" << endl;
-    select.ordena(lista, N);
+    select.ordenaSelection(lista, N);
     cout << "Quantidade de acessos: " << select.qtdAcessos << endl;
 
     fstream arq;
@@ -39,8 +39,8 @@ int main(){
         
         for(int j=0; j<tamanho; j++)
             listaAleatoria[j] = rand() % 1000 + 1;
-        insert.ordenaListaAleatoria(listaAleatoria,tamanho);
-        select.ordenaListaAleatoria(listaAleatoria,tamanho);
+        insert.ordenaInsertionListaAleatoria(listaAleatoria,tamanho);
+        select.ordenaSelectionListaAleatoria(listaAleatoria,tamanho);
         cout << i+1 << "\t" << insert.tamanho << "\t" << insert.qtdAcessos << "\t" << select.qtdAcessos << endl;
         arq << i+1 << "\t" << insert.tamanho << "\t" << insert.qtdAcessos << "\t" << select.qtdAcessos << endl;
     }
